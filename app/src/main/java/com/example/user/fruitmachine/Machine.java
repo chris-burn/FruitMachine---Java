@@ -30,6 +30,10 @@ public class Machine {
         this.bank += credit;
     }
 
+    public void debitBalance(int debit){
+        this.bank -= debit;
+    }
+
     public Wheel getWheel1() {
         return wheel1;
     }

@@ -50,13 +50,13 @@ public class MachineTest {
         assertEquals(70, machine.getBank());
     }
 
-//    @Test
-//    public void canGetWheel(){
-//        Wheel expectedArray = CHERRY,SEVEN,BELL,BAR,LEMON,JACKPOT;
-//        Wheel resultArray = machine.getWheel1();
-//
-//        assertEquals(expectedArray, resultArray);
-//    }
+    @Test
+    public void canDebitBalance(){
+        machine.debitBalance(20);
+        assertEquals(30, machine.getBank());
+    }
+
+
 
 
 }

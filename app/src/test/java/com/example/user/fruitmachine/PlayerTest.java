@@ -31,8 +31,16 @@ public class PlayerTest {
 
     @Test
     public void canMakePurchase(){
+        assertEquals(20, player.getWallet());
         player.buyCredit(5);
         assertEquals(15, player.getWallet());
+    }
+
+    @Test
+    public void canCashOut(){
+        assertEquals(20, player.getWallet());
+        player.cashOut(10);
+        assertEquals(30, player.getWallet());
     }
 
 }

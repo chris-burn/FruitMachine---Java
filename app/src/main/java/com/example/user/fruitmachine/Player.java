@@ -24,4 +24,8 @@ public class Player {
         wallet -= deposit;
     }
 
+    public void cashOut(int credit){
+        wallet += credit;
+    }
+
 }
