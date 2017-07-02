@@ -26,8 +26,11 @@ public class GameTest {
     @Before
     public void before(){
         this.player = new Player(20);
-        this.game = new Game(0);
+        this.wheel1 = new Wheel();
+        this.wheel2 = new Wheel();
+        this.wheel3 = new Wheel();
         this.machine = new Machine(50, wheel1, wheel2, wheel3);
+        this.game = new Game(0, machine);
     }
 
 

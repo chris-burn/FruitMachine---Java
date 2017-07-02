@@ -27,6 +27,9 @@ public class MachineTest {
 
     @Before
     public void before(){
+        wheel1 = new Wheel();
+        wheel2 = new Wheel();
+        wheel3 = new Wheel();
         machine = new Machine(50, wheel1, wheel2, wheel3);
     }
 

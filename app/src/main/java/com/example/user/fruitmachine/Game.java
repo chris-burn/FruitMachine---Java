@@ -20,10 +20,10 @@ public class Game {
     int credits = 0;
     Symbol symbol;
 
-    public Game(int credits){
+    public Game(int credits, Machine machine){
         this.credits = credits;
+        this.machine = new Machine(50, wheel1, wheel2, wheel3);
         player = new Player(20);
-        machine = new Machine(50, wheel1, wheel2, wheel3);
     }
 
     public int getCredits() {
