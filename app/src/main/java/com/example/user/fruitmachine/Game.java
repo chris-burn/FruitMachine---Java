@@ -1,6 +1,10 @@
 package com.example.user.fruitmachine;
 
+import android.icu.text.SymbolTable;
+
 import java.util.Collections;
+
+import static com.example.user.fruitmachine.Symbol.JACKPOT;
 
 /**
  * Created by user on 30/06/2017.
@@ -8,15 +12,18 @@ import java.util.Collections;
 
 public class Game {
 
-    Wheel wheel;
+    Wheel wheel1;
+    Wheel wheel2;
+    Wheel wheel3;
     Player player;
     Machine machine;
     int credits = 0;
+    Symbol symbol;
 
     public Game(int credits){
-        Wheel wheel1 = new Wheel();
-        Wheel wheel2 = new Wheel();
-        Wheel wheel3 = new Wheel();
+        wheel1 = new Wheel();
+        wheel2 = new Wheel();
+        wheel3 = new Wheel();
         player = new Player(20);
         machine = new Machine(50);
         this.credits = credits;
@@ -36,4 +43,51 @@ public class Game {
     public void setCredits(int credits) {
         this.credits = credits;
     }
+
+    public boolean creditCheck() {
+        if (this.credits == 0){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public String jackpotAvailable() {
+        if (machine.bank >= JACKPOT.value){
+            return "Yes";
+        } else {
+            return "No";
+        }
+    }
+
+//    public String winJackpot() {
+//        if ((wheel1.getRandomSymbol() == JACKPOT) && (wheel2.getRandomSymbol() == JACKPOT) && (wheel3.getRandomSymbol() == JACKPOT)){
+//            return "YOU WIN THE JACKPOT!";
+////            this.credits =+ Symbol.JACKPOT.getValue();
+//        } else {
+//            return " ";
+//        }
+//    }
+
+    public boolean playerWin() {
+        Symbol result1 = wheel1.getRandomSymbol();
+        Symbol result2 = wheel2.getRandomSymbol();
+        Symbol result3 = wheel3.getRandomSymbol();
+        if (result1 == result2 && result2 == result3) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+//    public String payoutCheck() {
+//        if (machine.bank >= JACKPOT.value){
+//            return "Yes";
+//        } else {
+//            return "No";
+//        }
+//    }
+
+
 }

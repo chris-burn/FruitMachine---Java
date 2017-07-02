@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import static com.example.user.fruitmachine.Symbol.BAR;
 import static com.example.user.fruitmachine.Symbol.CHERRY;
 import static com.example.user.fruitmachine.Symbol.JACKPOT;
 import static com.example.user.fruitmachine.Symbol.LEMON;

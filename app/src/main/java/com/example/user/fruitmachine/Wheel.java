@@ -47,5 +47,4 @@ public class Wheel {
         return getSymbolAtIndex(index);
     }
 
-
 }
