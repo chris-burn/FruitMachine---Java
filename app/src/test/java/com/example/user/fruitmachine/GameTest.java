@@ -25,12 +25,9 @@ public class GameTest {
 
     @Before
     public void before(){
-        player = new Player(20);
-        game = new Game(0);
-        wheel1 = new Wheel();
-        wheel2 = new Wheel();
-        wheel3 = new Wheel();
-        machine = new Machine(50);
+        this.player = new Player(20);
+        this.game = new Game(0);
+        this.machine = new Machine(50, wheel1, wheel2, wheel3);
     }
 
 
@@ -64,7 +61,7 @@ public class GameTest {
     }
 
     @Test
-    public void canMakeThreeLoadedWheels(){
+    public void canNewGameHasThreeLoadedWheels(){
         assertEquals(6, wheel1.getWheelSize());
         assertEquals(6, wheel2.getWheelSize());
         assertEquals(6, wheel3.getWheelSize());
@@ -72,9 +69,9 @@ public class GameTest {
 
     @Test
     public void checkWin() throws Exception {
-        Wheel spyWheel1 = Mockito.spy(wheel1);
-        Wheel spyWheel2 = Mockito.spy(wheel2);
-        Wheel spyWheel3 = Mockito.spy(wheel3);
+        Wheel spyWheel1 = Mockito.spy(this.wheel1);
+        Wheel spyWheel2 = Mockito.spy(this.wheel2);
+        Wheel spyWheel3 = Mockito.spy(this.wheel3);
         Mockito.when(spyWheel1.getRandomSymbol()).thenReturn(BELL);
         Mockito.when(spyWheel2.getRandomSymbol()).thenReturn(BELL);
         Mockito.when(spyWheel3.getRandomSymbol()).thenReturn(BELL);

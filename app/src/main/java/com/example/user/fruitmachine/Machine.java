@@ -7,9 +7,15 @@ package com.example.user.fruitmachine;
 public class Machine {
 
     int bank;
+    Wheel wheel1;
+    Wheel wheel2;
+    Wheel wheel3;
 
-    public Machine(int bank) {
+    public Machine(int bank, Wheel wheel1, Wheel wheel2, Wheel wheel3) {
         this.bank = bank;
+        this.wheel1 = wheel1;
+        this.wheel2 = wheel2;
+        this.wheel3 = wheel3;
     }
 
     public int getBank() {
@@ -23,4 +29,21 @@ public class Machine {
     public void creditBalance(int credit) {
         this.bank += credit;
     }
+
+    public Wheel getWheel1() {
+        return wheel1;
+    }
+
+    public Wheel getWheel2() {
+        return wheel2;
+    }
+
+    public Wheel getWheel3() {
+        return wheel3;
+    }
+
+
 }
+
+
+

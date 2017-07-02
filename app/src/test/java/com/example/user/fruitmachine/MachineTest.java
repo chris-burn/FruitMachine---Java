@@ -3,6 +3,15 @@ package com.example.user.fruitmachine;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
+import static com.example.user.fruitmachine.Symbol.BAR;
+import static com.example.user.fruitmachine.Symbol.BELL;
+import static com.example.user.fruitmachine.Symbol.CHERRY;
+import static com.example.user.fruitmachine.Symbol.JACKPOT;
+import static com.example.user.fruitmachine.Symbol.LEMON;
+import static com.example.user.fruitmachine.Symbol.SEVEN;
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -12,10 +21,13 @@ import static org.junit.Assert.assertEquals;
 public class MachineTest {
 
     Machine machine;
+    Wheel wheel1;
+    Wheel wheel2;
+    Wheel wheel3;
 
     @Before
     public void before(){
-        machine = new Machine(50);
+        machine = new Machine(50, wheel1, wheel2, wheel3);
     }
 
     @Test
@@ -34,5 +46,14 @@ public class MachineTest {
         machine.creditBalance(20);
         assertEquals(70, machine.getBank());
     }
+
+//    @Test
+//    public void canGetWheel(){
+//        Wheel expectedArray = CHERRY,SEVEN,BELL,BAR,LEMON,JACKPOT;
+//        Wheel resultArray = machine.getWheel1();
+//
+//        assertEquals(expectedArray, resultArray);
+//    }
+
 
 }

@@ -21,14 +21,10 @@ public class Game {
     Symbol symbol;
 
     public Game(int credits){
-        wheel1 = new Wheel();
-        wheel2 = new Wheel();
-        wheel3 = new Wheel();
-        player = new Player(20);
-        machine = new Machine(50);
         this.credits = credits;
+        player = new Player(20);
+        machine = new Machine(50, wheel1, wheel2, wheel3);
     }
-
 
     public int getCredits() {
         return credits;
@@ -70,9 +66,9 @@ public class Game {
 //    }
 
     public boolean playerWin() {
-        Symbol result1 = wheel1.getRandomSymbol();
-        Symbol result2 = wheel2.getRandomSymbol();
-        Symbol result3 = wheel3.getRandomSymbol();
+        Symbol result1 = machine.wheel1.getRandomSymbol();
+        Symbol result2 = machine.wheel2.getRandomSymbol();
+        Symbol result3 = machine.wheel3.getRandomSymbol();
         if (result1 == result2 && result2 == result3) {
             return true;
         } else {
