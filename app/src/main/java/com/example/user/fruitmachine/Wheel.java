@@ -3,7 +3,6 @@ package com.example.user.fruitmachine;
 import java.util.ArrayList;
 import java.util.Random;
 
-import static android.R.attr.value;
 
 /**
  * Created by user on 30/06/2017.

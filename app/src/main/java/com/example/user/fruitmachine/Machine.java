@@ -6,10 +6,10 @@ package com.example.user.fruitmachine;
 
 public class Machine {
 
-    int bank;
-    Wheel wheel1;
-    Wheel wheel2;
-    Wheel wheel3;
+    private int bank;
+    private Wheel wheel1;
+    private Wheel wheel2;
+    private Wheel wheel3;
 
     public Machine(int bank, Wheel wheel1, Wheel wheel2, Wheel wheel3) {
         this.bank = bank;

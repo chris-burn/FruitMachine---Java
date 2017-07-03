@@ -1,8 +1,5 @@
 package com.example.user.fruitmachine;
 
-import android.icu.text.SymbolTable;
-
-import java.util.Collections;
 import java.util.Scanner;
 
 import static com.example.user.fruitmachine.Symbol.BELL;
@@ -29,7 +26,7 @@ public class Game {
     public void play() {
 
         Game game = new Game(0, machine);
-        Player player = new Player(20);
+        Player player = new Player(30);
 
         System.out.println("WELCOME TO BANDIT COUNTRY!");
         System.out.println();
@@ -84,13 +81,13 @@ public class Game {
                 System.out.println();
                 game.reduceCredits();
 
-                Symbol result1 = machine.wheel1.getRandomSymbol();
+                Symbol result1 = machine.getWheel1().getRandomSymbol();
                 System.out.println(result1);
 
-                Symbol result2 = machine.wheel2.getRandomSymbol();
+                Symbol result2 = machine.getWheel2().getRandomSymbol();
                 System.out.println(result2);
 
-                Symbol result3 = machine.wheel3.getRandomSymbol();
+                Symbol result3 = machine.getWheel3().getRandomSymbol();
                 System.out.println(result3);
 
                 if (playerWin(result1, result2, result3) == true && result1.value <= machine.getBank()){
@@ -174,7 +171,7 @@ public class Game {
     }
 
     public String jackpotAvailable() {
-        if (machine.bank >= JACKPOT.value){
+        if (machine.getBank() >= JACKPOT.value){
             return "Yes";
         } else {
             return "No";
@@ -182,7 +179,7 @@ public class Game {
     }
 
     public boolean minPrizeAvailable(){
-        if (machine.bank >= BELL.value){
+        if (machine.getBank() >= BELL.value){
             return true;
         } else{
             return false;

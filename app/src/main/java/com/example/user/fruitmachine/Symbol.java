@@ -6,12 +6,13 @@ package com.example.user.fruitmachine;
 
 public enum Symbol {
 
-    CHERRY(3),
-    SEVEN(5),
-    BELL(7),
-    BAR(10),
-    LEMON(15),
-    JACKPOT(30);
+    CHERRY(5),
+    SEVEN(10),
+    BELL(15),
+    BAR(20),
+    LEMON(30),
+    JACKPOT(60);
+
 
     int value;
 

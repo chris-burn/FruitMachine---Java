@@ -1,7 +1,5 @@
 package com.example.user.fruitmachine;
 
-import java.util.Scanner;
-
 /**
  * Created by user on 30/06/2017.
  */

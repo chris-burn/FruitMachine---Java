@@ -6,7 +6,7 @@ package com.example.user.fruitmachine;
 
 public class Player {
 
-    int wallet;
+    private int wallet;
 
     public Player(int wallet){
         this.wallet = wallet;
