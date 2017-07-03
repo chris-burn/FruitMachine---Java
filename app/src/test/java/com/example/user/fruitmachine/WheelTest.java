@@ -36,7 +36,7 @@ public class WheelTest {
 
     @Test
     public void canCheckSymbolValue() {
-        assertEquals(30, wheel.prizeValue(JACKPOT));
+        assertEquals(60, wheel.prizeValue(JACKPOT));
     }
 
     @Test

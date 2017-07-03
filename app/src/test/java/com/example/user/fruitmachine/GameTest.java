@@ -29,17 +29,17 @@ public class GameTest {
         this.wheel1 = new Wheel();
         this.wheel2 = new Wheel();
         this.wheel3 = new Wheel();
-        this.machine = new Machine(50, wheel1, wheel2, wheel3);
-        this.game = new Game(0, machine);
+        this.machine = new Machine(60, wheel1, wheel2, wheel3);
+        this.game = new Game(machine, player);
     }
 
 
     @Test
     public void canPlayerBuyCredits(){
         game.makeDeposit(10);
-        assertEquals(10, game.player.getWallet());
+//        assertEquals(20, player.getWallet());
         assertEquals(10, game.getCredits());
-        assertEquals(60, game.machine.getBank());
+        assertEquals(70, game.machine.getBank());
     }
 
     @Test
@@ -103,7 +103,7 @@ public class GameTest {
     public void checkIncreaseCredits(){
         assertEquals(0, game.getCredits());
         game.increaseCredits(LEMON);
-        assertEquals(15, game.getCredits());
+        assertEquals(30, game.getCredits());
     }
 
     @Test

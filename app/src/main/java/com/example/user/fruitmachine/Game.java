@@ -13,20 +13,19 @@ public class Game {
 
     Player player;
     Machine machine;
-    int credits = 0;
+    private int credits;
     Symbol symbol;
     Runner runner;
 
-    public Game(int credits, Machine machine){
-        this.credits = credits;
+    public Game(Machine machine, Player player){
         this.machine = machine;
-        player = new Player(20);
+        this.player = player;
+        this.credits = 0;
     }
 
     public void play() {
 
-        Game game = new Game(0, machine);
-        Player player = new Player(30);
+        Game game = new Game(machine, player);
 
         System.out.println("WELCOME TO BANDIT COUNTRY!");
         System.out.println();
@@ -140,8 +139,8 @@ public class Game {
     }
 
     public void makeDeposit(int deposit) {
-        player.buyCredit(deposit);
-        this.credits =+ deposit;
+//        player.buyCredit(deposit);
+        this.credits += deposit;
         machine.creditBalance(deposit);
     }
 
