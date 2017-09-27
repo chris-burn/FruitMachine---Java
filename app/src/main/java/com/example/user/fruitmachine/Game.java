@@ -5,17 +5,12 @@ import java.util.Scanner;
 import static com.example.user.fruitmachine.Symbol.BELL;
 import static com.example.user.fruitmachine.Symbol.JACKPOT;
 
-/**
- * Created by user on 30/06/2017.
- */
 
 public class Game {
 
     Player player;
     Machine machine;
     private int credits;
-    Symbol symbol;
-    Runner runner;
 
     public Game(Machine machine, Player player){
         this.machine = machine;
@@ -42,8 +37,10 @@ public class Game {
         }
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("How much funds do you wish to credit? (NUMBERS ONLY)");
+        System.out.println("How much funds do you wish to credit from wallet? (NUMBERS ONLY)");
+
         while (!sc.hasNextInt()) sc.next();
+
         int num1 = sc.nextInt();
         if (player.getWallet() >= num1) {
             game.makeDeposit(num1);
@@ -53,7 +50,7 @@ public class Game {
             System.out.println();
             System.out.println("Credit: " + game.getCredits());
             System.out.println("Bank: " + machine.getBank());
-        } else{
+        } else {
             System.out.println("Insufficient funds! Security has been called.");
         }
 
@@ -127,7 +124,7 @@ public class Game {
                 } else{
                 System.out.println("Insufficient funds! Security has been called.");
                 }
-//              IF ENTER CHAR here GAME BREAKS
+//              IF ENTER CHAR here Program BREAKS
             }
         }
     }
@@ -139,7 +136,7 @@ public class Game {
     }
 
     public void makeDeposit(int deposit) {
-//        player.buyCredit(deposit);
+
         this.credits += deposit;
         machine.creditBalance(deposit);
     }
@@ -186,9 +183,6 @@ public class Game {
     }
 
     public boolean playerWin(Symbol result1, Symbol result2, Symbol result3) {
-//        Symbol result1 = machine.wheel1.getRandomSymbol();
-//        Symbol result2 = machine.wheel2.getRandomSymbol();
-//        Symbol result3 = machine.wheel3.getRandomSymbol();
         if (result1 == result2 && result2 == result3) {
             return true;
         } else {

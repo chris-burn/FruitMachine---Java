@@ -1,8 +1,5 @@
 package com.example.user.fruitmachine;
 
-/**
- * Created by user on 01/07/2017.
- */
 
 public class Machine {
 
